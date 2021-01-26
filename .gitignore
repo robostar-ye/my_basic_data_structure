@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+.idea
+.vscode
+.vs
+*cmake-build*
+out
+*json
