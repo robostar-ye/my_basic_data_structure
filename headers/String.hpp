@@ -13,8 +13,11 @@ public:
   String &operator=(const String &str);
   ~String();
   char *get_char_str() const { return this->m_data_; }
+  /*static int test(int &a) { return a += 1; }
+  int& get_a() { return a_test_; }*/
 
 private:
+   /* int a_test_;*/
   char *m_data_;
 };
 

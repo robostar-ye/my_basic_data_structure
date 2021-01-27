@@ -4,6 +4,8 @@
 #include "../headers/Complex.hpp"
 #include "../headers/String.hpp"
 #include <iostream>
+#include <queue>
+#include <string>
 
 int main() {
   Complex<float> complex_test_1(1.23, -0.98);
@@ -17,22 +19,28 @@ int main() {
   std::cout << str1 << str2 << std::endl;
 
   char s[] = "测试字符串";
+  //str1.get_a() = 1;
+  //std::cout << str1.get_a() << std::endl;
+  //str1.test(str1.get_a());
+  //std::cout << str1.get_a() << std::endl;
   std::cout << s << std::endl;
 
   //Complex<float>* pc = new Complex<float>(1, 2);
-  void* mem = operator new(sizeof(Complex<float>));
-  Complex<float>* pc;
-  pc = static_cast<Complex<float>*>(mem);
-  //pc->Complex::Complex(1, 2);
-  //pc->real(1);
-  pc->Complex<float>::Complex(1, 2);
-  std::cout << *pc << std::endl;
-
-  delete pc;
+//  Complex<float>* pc;
+//  void* mem = operator new(sizeof(Complex<float>));
+//  pc = static_cast<Complex<float>*>(mem);
+//  pc->Complex<float>::Complex(1, 2);  //!这里MinGW编译会报错，MSVC正常
+//  std::cout << *pc << std::endl;
+//
+//  delete pc;
   
   auto* ps = new String("hello");
   ps->~String();
   operator delete(ps);
+
+  std::string str_;
+
+  std::queue<float> A;
   
   return 0;
 }
